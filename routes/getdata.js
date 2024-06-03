@@ -9,7 +9,7 @@ router.get('/getdata/:id', async (req, res) => {
     try {
         const {id} = req.params
         let data = await RunModel.findOne({runID:id})
-        res.status(201).json({"success":data})
+        res.status(200).json({"success":data})
     } catch (error) {
         res.status(500).json({"Error":error})
         console.error(error)
