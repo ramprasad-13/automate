@@ -21,7 +21,7 @@ const testCaseSchema = new mongoose.Schema({
 });
 
 const runSchema = new mongoose.Schema({
-  runID: Number,
+  runID: {type:Number,unique:true},
   runName: String,
   testCases: [testCaseSchema],
 });
