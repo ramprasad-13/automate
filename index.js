@@ -17,15 +17,13 @@ app.use(getdata)
 
 
 var corsOptions = {
-    origin: function (origin, callback) {
-        callback(null, true)
-      },  // Specify your origin here
+    origin:"*",  // Specify your origin here
     credentials: true,  // This allows the session cookie to be sent back and forth
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   };
 
 //middleware
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.get("/",(req,res)=>{
     res.json({"success":"App deployed sucessfully"})
