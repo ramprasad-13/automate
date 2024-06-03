@@ -22,3 +22,5 @@ app.get("/",(req,res)=>{
 app.listen(port,hostname,()=>{
     console.log(`app started listening http://localhost:${port}`);
 })
+
+module.exports = app;
