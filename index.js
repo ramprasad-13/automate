@@ -25,7 +25,7 @@ var corsOptions = {
   };
 
 //middleware
-app.use(cors(corsOptions))
+app.use(cors())
 
 app.get("/",(req,res)=>{
     res.json({"success":"App deployed sucessfully"})
