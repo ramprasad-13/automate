@@ -9,6 +9,7 @@ const postdata= require('./routes/postdata')
 const getdata = require('./routes/getdata')
 
 //middlewares
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
@@ -24,8 +25,6 @@ var corsOptions = {
     //optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   };
 
-//middleware
-app.use(cors(corsOptions))
 
 app.get("/",(req,res)=>{
     res.json({"success":"App deployed sucessfully"})
