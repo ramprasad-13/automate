@@ -17,9 +17,10 @@ app.use(getdata)
 
 
 var corsOptions = {
-    origin:"*",  // Specify your origin here
+    origin: function (origin, callback){ callback(null, true)},
+    methods: ['GET', 'POST','PATCH','DELETE'], // Specify your origin here
     credentials: true,  // This allows the session cookie to be sent back and forth
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    //optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   };
 
 //middleware
